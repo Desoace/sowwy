@@ -1,0 +1,17 @@
+/* Page-specific styles for index.html (shared styles are in common.css) */
+#yesButton {
+    color: #2e9e4f;
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+}
+
+.gif_container img { height: 45vh; }
+
+@media only screen and (max-width: 414px) {
+    .header_text { font-size: 24px; }
+    .btn { padding: 13px 24px; font-size: 14px; }
+}

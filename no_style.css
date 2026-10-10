@@ -1,0 +1,25 @@
+/* Page-specific styles for no.html (shared styles are in common.css) */
+.shake { animation: shake 0.5s; }
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
+.big_emoji { font-size: 130px; animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+#yesButton { color: #2e9e4f; animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@media only screen and (max-width: 414px) {
+    .big_emoji { font-size: 90px; }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>I'm sorry 💚</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Oii angry bird i am sorry for the disappointment </h1>
+                <h1 class="header_text">will u accept my apology please please</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="location.href='yes.html'">Yes 💚</button>
+                <button class="btn" id="noButton" onclick="goNo()">No</button>
+            </div>
+        </div>
+        <script src="common.js"></script>
+        <script>
+            floatHearts();
+            sessionStorage.setItem('noCount', 0);   // fresh start
+            function goNo() {
+                sessionStorage.setItem('noCount', 1);
+                location.href = 'no.html';
+            }
+        </script>
+    </body>
+</html>

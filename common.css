@@ -1,0 +1,50 @@
+/* Shared styles for every page */
+:root { --bg: rgb(189, 225, 122); }
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.8s ease;
+}
+
+.container { text-align: center; padding: 10px; position: relative; z-index: 2; }
+
+.header_text {
+    font-size: clamp(22px, 5vw, 40px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 14px 10px 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.gif_container { display: flex; justify-content: center; align-items: center; min-height: 160px; margin-top: 10px; }
+.gif_container img { max-height: 45vh; max-width: 90vw; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); }
+
+.buttons { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+
+.btn {
+    background-color: #ffffff;
+    color: rgb(233, 48, 48);
+    padding: 15px 32px;
+    font: 700 16px 'Nunito', sans-serif;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, font-size 0.4s ease, padding 0.4s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(2px); box-shadow: none; }
+
+/* floating hearts (made by common.js) */
+.heart { position: fixed; bottom: -40px; opacity: 0.7; pointer-events: none; z-index: 1; animation: rise linear forwards; }
+@keyframes rise { to { transform: translateY(-115vh) rotate(25deg); opacity: 0; } }
+
+#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 3; }

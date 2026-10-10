@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hurrayyyy!! 🎉</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./yes_style.css">
+    </head>
+    <body>
+        <canvas id="confetti"></canvas>
+        <div class="container">
+            <h1 class="header_text">Hurrayyyy!! 🎉</h1>
+            <p class="sub_text" id="sub">Thank you for forgiving me 💚</p>
+            <div class="gif_container">
+                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class="buttons">
+                <button class="btn" onclick="again()">Replay 🔁</button>
+            </div>
+        </div>
+        <script src="common.js"></script>
+        <script>
+            floatHearts(['💚', '💖', '💛', '✨', '🎉'], 350);
+            confetti(7000);
+            var noes = parseInt(sessionStorage.getItem('noCount')) || 0;
+            if (noes > 0) {
+                document.getElementById('sub').textContent =
+                    'You said No ' + noes + (noes === 1 ? ' time' : ' times') +
+                    ' 😏 but I\'m SO happy you said yes! 💚';
+            }
+            function again() { sessionStorage.setItem('noCount', 0); location.href = 'index.html'; }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Please? 🥺</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./no_style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="msg" class="header_text"></h1>
+            <div class="gif_container" id="pic"></div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="location.href='yes.html'">Yes 💚</button>
+                <button class="btn" id="noButton" onclick="sadder()">No</button>
+            </div>
+        </div>
+        <script src="common.js"></script>
+        <script src="gifs.js"></script>
+        <script>
+            floatHearts(['💧', '💙', '😢', '🥺'], 1100);
+            var n = parseInt(sessionStorage.getItem('noCount')) || 1;
+            var msg = document.getElementById('msg');
+            var pic = document.getElementById('pic');
+            var noBtn = document.getElementById('noButton');
+
+            function show() {
+                var s = STAGES[Math.min(n, STAGES.length) - 1];
+                msg.textContent = s.text;
+                document.body.style.backgroundColor = s.bg;
+                pic.innerHTML = '';
+                function emoji() { pic.innerHTML = '<div class="big_emoji">' + s.emoji + '</div>'; }
+                if (s.gif) {
+                    var img = new Image();
+                    img.alt = 'Sad cute animated illustration';
+                    img.onerror = emoji;
+                    img.src = s.gif;
+                    pic.appendChild(img);
+                } else { emoji(); }
+                // No button gets bigger every time
+                var size = Math.min(16 + (n - 1) * 9, 110);
+                noBtn.style.fontSize = size + 'px';
+                noBtn.style.padding = (size * 0.9) + 'px ' + (size * 2) + 'px';
+                msg.classList.remove('shake'); void msg.offsetWidth; msg.classList.add('shake');
+            }
+            function sadder() { n++; sessionStorage.setItem('noCount', n); show(); }
+            show();
+        </script>
+    </body>
+</html>
